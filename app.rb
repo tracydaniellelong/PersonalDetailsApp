@@ -25,3 +25,10 @@ get '/age' do
 	firstname = params[:first_n]
 	erb :age, locals: {lastname: lastname, firstname: firstname}
 end
+
+post '/age' do
+	age = params[:age]
+	lastname = params[:last_n]
+	firstname = params[:first_n]
+	redirect = 'color?age=' + age + '&last_n=' + lastname + '&first_n=' + firstname
+end
