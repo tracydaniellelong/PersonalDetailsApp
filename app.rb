@@ -23,12 +23,20 @@ end
 get '/age' do
 	lastname = params[:lname]
 	firstname = params[:first_n]
-	erb :age, locals: {lastname: lastname, firstname: firstname}
+	erb :age, locals: {firstname: firstname, lastname: lastname}
 end
 
 post '/age' do
+	firstname = params[:first_n]
+	lastname = params[:last_n]
+	age = params[:age]
+	redirect '/color?first_n=' + firstname + '&last_n=' + lastname + '&age=' + age
+end
+
+
+get '/color' do
 	age = params[:age]
 	lastname = params[:last_n]
 	firstname = params[:first_n]
-	redirect  '/color?age=' + age + '&last_n=' + lastname + '&first_n=' + firstname
+	erb :color, locals: {lastname: lastname, firstname: firstname, age: age}
 end
