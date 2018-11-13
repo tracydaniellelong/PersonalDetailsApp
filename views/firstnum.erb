@@ -1,9 +1,9 @@
-<%= fname %> <%= lname %> <br>
-What is your favorite color?
+<%= fname %> what is your lucky number?
 
-<form method = 'post' action = '/color'>
-	Favorite Color: <input type = "text" name = "color"><br>
+<form method = 'post' action = '/firstnum'>
+	Lucky Number One: <input type = "text" name = "numone"><br>
 	<input type = "submit" value="submit">
+	<input type = "hidden" name = "color" value = "<%= color%>"><br>
 	<input type = "hidden" name = "age" value = "<%= age%>"><br>
 	<input type = "hidden" name = "fname" value = "<%= fname %>"><br>
 	<input type = "hidden" name = "lname" value = "<%= lname%>"><br>

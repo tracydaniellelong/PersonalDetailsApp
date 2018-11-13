@@ -41,6 +41,15 @@ get '/color' do
 	erb :color, locals: {lname: last_name, fname: first_name, age: age}
 end
 
+post '/color' do
+	first_name = params[:fname]
+	last_name = params[:lname]
+	age = params[:age]
+	color = params[:color]
+	redirect '/firstnum?fname=' + first_name + '&lname=' + last_name + '&age=' + age + '&color=' + color
+end
+
+
 
 
 
