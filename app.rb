@@ -49,7 +49,20 @@ post '/color' do
 	redirect '/firstnum?fname=' + first_name + '&lname=' + last_name + '&age=' + age + '&color=' + color
 end
 
+get '/firstnum' do
+	first_name = params[:fname]
+	last_name = params[:lname]
+	age = params[:age]
+	color = params[:color]
+	erb :firstnum, locals: {lname: last_name, fname: first_name, age: age, color: color}
+end
 
-
-
+post '/firstnum' do
+	first_name = params[:fname]
+	last_name = params[:lname]
+	age = params[:age]
+	color = params[:color]
+	numone = params[:numone]
+	redirect '/secondnum?fname=' + first_name + '&lname=' + last_name + '&age=' + age + '&color=' + color + '&numone=' + numone
+end
 
