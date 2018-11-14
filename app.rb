@@ -126,5 +126,17 @@ post '/favoritepet' do
 	numtwo = params[:numtwo]
 	numthree = params[:numthree]
 	pet = params[:pet]
-	#redirect '/favoritepet?fname=' + first_name + '&lname=' + last_name + '&age=' + age + '&color=' + color + '&numone=' + numone + '&numtwo=' + numtwo + '&numthree=' + numthree + '&pet=' + pet
+	redirect '/list?fname=' + first_name + '&lname=' + last_name + '&age=' + age + '&color=' + color + '&numone=' + numone + '&numtwo=' + numtwo + '&numthree=' + numthree + '&pet=' + pet
+end
+
+get '/list' do
+	first_name = params[:fname]
+	last_name = params[:lname]
+	age = params[:age]
+	color = params[:color]
+	numone = params[:numone]
+	numtwo = params[:numtwo]
+	numthree = params[:numthree]
+	pet = params[:pet]
+	erb :list, locals: {lname: last_name, fname: first_name, age: age, color: color, numone: numone, numtwo: numtwo, numthree: numthree, pet: pet}
 end
