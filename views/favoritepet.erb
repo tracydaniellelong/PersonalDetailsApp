@@ -1,0 +1,13 @@
+Do you have a favorite pet <%= fname %>?
+
+<form method = 'post' action = '/favoritepet'>
+	Favorite Pet: <input type = "text" name = "pet"><br>
+	<input type = "submit" value = "submit">
+	<input type = "hidden" name = "numthree" value = "<%= numthree%>"><br>
+	<input type = "hidden" name = "numtwo" value = "<%= numtwo%>"><br>
+	<input type = "hidden" name = "numone" value = "<%= numone%>"><br>
+	<input type = "hidden" name = "color" value = "<%= color%>"><br>
+	<input type = "hidden" name = "age" value = "<%= age%>"><br>
+	<input type = "hidden" name = "fname" value = "<%= fname %>"><br>
+	<input type = "hidden" name = "lname" value = "<%= lname%>"><br>
+</form>

@@ -72,7 +72,7 @@ get '/secondnum' do
 	age = params[:age]
 	color = params[:color]
 	numone = params[:numone]
-	erb :firstnum, locals: {lname: last_name, fname: first_name, age: age, color: color, numone: numone}
+	erb :secondnum, locals: {lname: last_name, fname: first_name, age: age, color: color, numone: numone}
 end
 
 post '/secondnum' do
@@ -83,4 +83,48 @@ post '/secondnum' do
 	numone = params[:numone]
 	numtwo = params[:numtwo]
 	redirect '/thirdnum?fname=' + first_name + '&lname=' + last_name + '&age=' + age + '&color=' + color + '&numone=' + numone + '&numtwo=' + numtwo
+end
+
+get '/thirdnum' do
+	first_name = params[:fname]
+	last_name = params[:lname]
+	age = params[:age]
+	color = params[:color]
+	numone = params[:numone]
+	numtwo = params[:numtwo]
+	erb :thirdnum, locals: {lname: last_name, fname: first_name, age: age, color: color, numone: numone, numtwo: numtwo}
+end
+
+post '/thirdnum' do
+	first_name = params[:fname]
+	last_name = params[:lname]
+	age = params[:age]
+	color = params[:color]
+	numone = params[:numone]
+	numtwo = params[:numtwo]
+	numthree = params[:numthree]
+	redirect '/favoritepet?fname=' + first_name + '&lname=' + last_name + '&age=' + age + '&color=' + color + '&numone=' + numone + '&numtwo=' + numtwo + '&numthree=' + numthree
+end
+
+get '/favoritepet' do
+	first_name = params[:fname]
+	last_name = params[:lname]
+	age = params[:age]
+	color = params[:color]
+	numone = params[:numone]
+	numtwo = params[:numtwo]
+	numthree = params[:numthree]
+	erb :favoritepet, locals: {lname: last_name, fname: first_name, age: age, color: color, numone: numone, numtwo: numtwo, numthree: numthree}
+end
+
+post '/favoritepet' do
+	first_name = params[:fname]
+	last_name = params[:lname]
+	age = params[:age]
+	color = params[:color]
+	numone = params[:numone]
+	numtwo = params[:numtwo]
+	numthree = params[:numthree]
+	pet = params[:pet]
+	#redirect '/favoritepet?fname=' + first_name + '&lname=' + last_name + '&age=' + age + '&color=' + color + '&numone=' + numone + '&numtwo=' + numtwo + '&numthree=' + numthree + '&pet=' + pet
 end
